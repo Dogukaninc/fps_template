@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Namespace'i eklemeyi unutma
 
 public class PlayerController : MonoBehaviour
 {
@@ -53,14 +52,13 @@ public class PlayerController : MonoBehaviour
 
     private void HandleLook()
     {
-        // 'Look' action'ından mouse delta verisini oku
         Vector2 lookInput = _input.Player.Look.ReadValue<Vector2>();
 
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
 
         _xRotation -= mouseY;
-        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f); // Boyun kırma sınırı
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
         playerCamera.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
 
