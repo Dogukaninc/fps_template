@@ -1136,15 +1136,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000052869
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01621
+      value: 0.03999996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.043513
+      value: -0.055000007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1185,6 +1185,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
       propertyPath: m_Name
       value: SM_PRP_Pistols_Colt_01_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d1c661aaac879b48b6da9e72216be32, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1689,11 +1693,11 @@ Transform:
   m_GameObject: {fileID: 1561780529}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7028671, y: 0.07731532, z: 0.077315375, w: -0.7028674}
-  m_LocalPosition: {x: 1.665, y: 1.147, z: 0.462}
-  m_LocalScale: {x: 2.364657, y: 3.8798437, z: 12.350922}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 3.2815275, z: 10.446268}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1710857459}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -12.555}
 --- !u!4 &1571122256 stripped
 Transform:
@@ -2022,11 +2026,12 @@ Transform:
   m_GameObject: {fileID: 1710857458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.029, y: -0.404, z: 0.728}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 526081291}
+  - {fileID: 1561780532}
   m_Father: {fileID: 306901627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1742363548
@@ -2480,5 +2485,4 @@ SceneRoots:
   - {fileID: 150564423}
   - {fileID: 1742363549}
   - {fileID: 1480389743}
-  - {fileID: 1561780532}
   - {fileID: 1759485410}
