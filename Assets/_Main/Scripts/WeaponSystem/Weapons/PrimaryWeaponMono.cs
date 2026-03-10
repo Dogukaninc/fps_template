@@ -20,10 +20,11 @@ namespace _Main.Scripts.WeaponSystem.Weapons
         public override void FireWeapon()
         {
             if (currentWeaponData == null || currentWeaponData.shootPoint == null) return;
-            
+            Debug.Log("asdasda");
             float fireInterval = 1f / currentWeaponData.fireRate;
             if (Time.time - _lastFireTime < fireInterval) return;
             _lastFireTime = Time.time;
+            Debug.Log("damagee");
 
             _shootingData.ShootDamageRay(currentWeaponData.shootPoint.position, currentWeaponData.shootPoint.forward, currentWeaponData.range, currentWeaponData);
         }

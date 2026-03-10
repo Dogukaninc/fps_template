@@ -687,17 +687,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4632446457939083022, guid: f06e9e6b21c1e7d47932e7c494bd9bbe, type: 3}
   m_PrefabInstance: {fileID: 1409353123252502637}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1206866973 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 160287411280970202, guid: 3608d67b1c7900249b63df113621a3c6, type: 3}
-  m_PrefabInstance: {fileID: 9100021902808010070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014f34ef156b499ba768e0e9e20a77bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::_Main.Scripts.WeaponSystem.CustomWeapons.SmgWeaponRenderViewMono
 --- !u!1 &1507338093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,14 +1273,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 160287411280970202, guid: 3608d67b1c7900249b63df113621a3c6, type: 3}
-      propertyPath: currentWeaponData.fireRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658259405702467197, guid: 3608d67b1c7900249b63df113621a3c6, type: 3}
-      propertyPath: equipped
-      value: 
-      objectReference: {fileID: 1206866973}
     - target: {fileID: 6035901521766404477, guid: 3608d67b1c7900249b63df113621a3c6, type: 3}
       propertyPath: m_Name
       value: PlayerController

@@ -11,7 +11,7 @@ namespace _Main.Scripts.WeaponSystem
     //TODO : WEPAON RENDER VE LOGİC NASIL AYTIRILACAK ? BUNU ÇÖZÜP ONA GÖRE BURAYI İMPLEMENTE EDELİM.
     public class WeaponHolder : MonoBehaviour
     {
-        private WeaponData currentWeaponData;
+        [SerializeField] private WeaponData currentWeaponData;
         [SerializeField] private AbstractPlayerWeaponBase equipped;
 
         // Bu sınıfta tuşa bastığımızda istediğimiz silahı elimizde spawnlayacağız
@@ -54,7 +54,7 @@ namespace _Main.Scripts.WeaponSystem
         private void Shoot()
         {
             equipped.FireWeapon();
-            Debug.Log("SHOOTING");
+            Debug.Log("FİREEEEED");
         }
 
         private void Scope()

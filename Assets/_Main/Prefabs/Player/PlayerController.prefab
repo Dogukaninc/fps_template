@@ -77,7 +77,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ddbdf0351b4cf3b37bd15dfdbe5e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Main.Scripts.WeaponSystem.WeaponHolder
-  equipped: {fileID: 0}
+  currentWeaponData:
+    weaponPrefab: {fileID: 0}
+    weaponType: 0
+    shootPoint: {fileID: 0}
+    damage: 0
+    fireRate: 0
+    range: 0
+    clipSize: 0
+    maxAmmo: 0
+  equipped: {fileID: 160287411280970202}
   holderParentTransform: {fileID: 3155686157659918918}
 --- !u!1 &1169655928555413873
 GameObject:
@@ -494,7 +503,6 @@ MonoBehaviour:
   jumpForce: 7
   gravity: -9.81
   playerCamera: {fileID: 6985434233908238072}
-  equipped: {fileID: 0}
   weaponHolder: {fileID: 1658259405702467197}
 --- !u!114 &7226405674508027458
 MonoBehaviour:
@@ -931,42 +939,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3155686157659918918}
     m_Modifications:
-    - target: {fileID: 2686163448171246083, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.374
-      objectReference: {fileID: 0}
-    - target: {fileID: 2686163448171246083, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.164
-      objectReference: {fileID: 0}
-    - target: {fileID: 2686163448171246083, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.range
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.maxAmmo
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.clipSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.fireRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-      propertyPath: currentWeaponData.shootPoint
-      value: 
-      objectReference: {fileID: 140859257872102707}
     - target: {fileID: 5749262142291361265, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1016,16 +988,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
---- !u!4 &140859257872102707 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2686163448171246083, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
-  m_PrefabInstance: {fileID: 2644534179612067632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &144488223925885058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2788315948929277874, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
   m_PrefabInstance: {fileID: 2644534179612067632}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &160287411280970202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2777086400417662698, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
+  m_PrefabInstance: {fileID: 2644534179612067632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014f34ef156b499ba768e0e9e20a77bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Main.Scripts.WeaponSystem.CustomWeapons.SmgWeaponRenderViewMono
 --- !u!4 &365304250821997840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2423666215366390304, guid: 29596a3505ce1ba4a92c36399cd9d150, type: 3}
