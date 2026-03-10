@@ -14,6 +14,7 @@ namespace _Main.Scripts
         public void DecreaseHealth(float amount)
         {
             currentHealth -= amount;
+            Debug.Log("Hedef Hasar Aldı");
         }
         
     }

@@ -1,13 +1,12 @@
-// csharp
+using _Main.Input.InputSystem;
 using _Main.Scripts.InteractionSystem;
+using _Main.Scripts.WeaponSystem;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace _Main.Scripts.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        private GameInput _input;
         private InteractionController _interactionController;
 
         [Header("Movement Settings")]
@@ -25,30 +24,34 @@ namespace _Main.Scripts.Player
         private CharacterController _characterController;
         private float _verticalVelocity;
 
+        [SerializeField] private AbstractPlayerWeaponBase equipped;
+
+        [Header("Child References")]
+        [SerializeField] private WeaponHolder weaponHolder;
+
+        private BaseInputManager Inputs => BaseInputManager.Instance;
+
         private void Awake()
         {
-            _input = new GameInput();
+            weaponHolder.Init();
+
             _characterController = GetComponent<CharacterController>();
             if (_characterController == null)
                 Debug.LogWarning("[PlayerController] CharacterController component missing on the player.");
 
             _interactionController = GetComponent<InteractionController>();
-
-            _input.Player.Fire.performed += ctx => OnLeftClick();
-            _input.Player.AltFire.performed += ctx => OnRightClick();
-            _input.Player.Interact.performed += ctx => _interactionController?.Interact();
         }
 
         private void OnEnable()
         {
-            _input.Player.Enable();
+            Inputs.EnablePlayerMap();
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
 
         private void OnDisable()
         {
-            _input.Player.Disable();
+            Inputs.DisablePlayerMap();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
@@ -63,37 +66,25 @@ namespace _Main.Scripts.Player
         {
             if (_characterController == null) return;
 
-            // Yatay hareket
-            Vector2 moveInput = _input.Player.Move.ReadValue<Vector2>();
+            Vector2 moveInput = Inputs.MoveInput;
             Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
             Vector3 horizontal = move * moveSpeed;
 
-            // Grounded kontrolü via CharacterController
             bool isGrounded = _characterController.isGrounded;
             if (isGrounded && _verticalVelocity < 0f)
-            {
-                // Küçük negatif hız ile zemine yapışma sağlanır
                 _verticalVelocity = -4f;
-            }
 
-            // Zıplama isteği
-            if (_input.Player.Jump.triggered && isGrounded)
-            {
+            if (Inputs.Jump.IsActive && isGrounded)
                 _verticalVelocity = jumpForce;
-            }
 
-            // Yerçekimi uygulanması
             _verticalVelocity += gravity * Time.deltaTime;
-
             Vector3 velocity = horizontal + Vector3.up * _verticalVelocity;
-
-            // CharacterController hareketi
             _characterController.Move(velocity * Time.deltaTime);
         }
 
         private void HandleLook()
         {
-            Vector2 lookInput = _input.Player.Look.ReadValue<Vector2>();
+            Vector2 lookInput = Inputs.LookInput;
 
             float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
             float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
@@ -107,27 +98,13 @@ namespace _Main.Scripts.Player
             transform.Rotate(Vector3.up * mouseX);
         }
 
-        private bool IsGrounded()
-        {
-            return _characterController != null && _characterController.isGrounded;
-        }
-
-        private void OnLeftClick()
-        {
-            Debug.Log("Mouse 0 (Sol Tık) algılandı!");
-        }
-
-        private void OnRightClick()
-        {
-            Debug.Log("Mouse 1 (Sağ Tık) algılandı!");
-        }
-
         private void OnDrawGizmosSelected()
         {
             if (_characterController != null)
             {
                 Gizmos.color = Color.yellow;
-                Gizmos.DrawWireSphere(transform.position + Vector3.down * (_characterController.height / 2f), 0.1f);
+                Gizmos.DrawWireSphere(
+                    transform.position + Vector3.down * (_characterController.height / 2f), 0.1f);
             }
         }
     }

@@ -2,12 +2,11 @@
 
 namespace _Main.Scripts.InteractionSystem
 {
-    public class BoxMono : BaseAbstractInteractable
+    public class BoxMono : MonoBehaviour, IInteractable
     {
-            public override void Interact()
-            {
-                base.Interact();
-                Debug.Log("Box Interacted !");
-            }
+        public void Interact()
+        {
+            Debug.Log("Box Interacted");
+        }
     }
 }

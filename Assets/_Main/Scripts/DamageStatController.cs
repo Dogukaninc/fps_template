@@ -8,9 +8,10 @@ namespace _Main.Scripts
     /// </summary>
     public class DamageStatController
     {
-        public void ApplyRegularDamage(GameObject target, float damage)
+        public void ApplyDamage(GameObject target, float damage)
         {
             Damage(target, damage);
+            Debug.Log("Applied damage: " + damage + " to " + target.name);
         }
         
         private IEnumerator ApplyBleedingDamageCoroutine(GameObject target, float damage, float duration)

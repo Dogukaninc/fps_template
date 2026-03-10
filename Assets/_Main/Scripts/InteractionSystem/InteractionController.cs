@@ -1,3 +1,4 @@
+using _Main.Input.InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,9 +10,21 @@ namespace _Main.Scripts.InteractionSystem
         public LayerMask interactableLayer;
         Camera _mainCamera;
 
+        private BaseInputManager Inputs => BaseInputManager.Instance;
+
         private void Awake()
         {
             _mainCamera = Camera.main;
+        }
+
+        private void OnEnable()
+        {
+            Inputs.Interact.OnPerformed += Interact;
+        }
+
+        private void OnDisable()
+        {
+            Inputs.Interact.OnPerformed -= Interact;
         }
 
         public void Interact()

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995e3261fe3fb0043862eee493da1167, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  currencyData:
+    Coin: 0
+    Gem: 0
+    currencyList: []
+  savedLevelDataList:
+  - currentStageIndex: 0
+    lvl: 0
+    IsOpen: 1
+    MaxClearedEnemyPercentage: 0
+  - currentStageIndex: 0
+    lvl: 1
+    IsOpen: 0
+    MaxClearedEnemyPercentage: 0
+  - currentStageIndex: 0
+    lvl: 2
+    IsOpen: 0
+    MaxClearedEnemyPercentage: 0
+  currentLevelIndex: 0
+  currentStageIndex: 0
+  savedPlayerUpgradeDataList: []
+  savedTutorialData:
+    lastIndex: 1
+    tutorialInfo: 0
+    completed: 0
+  savedBreakableObjectDataList:
+  - id: QNF6
+    isBroken: 0
+  - id: 4S5I
+    isBroken: 0
+  - id: MW9H
+    isBroken: 0
+  savedAxeData:
+    level: 0
+    axeUpgradeStatus: 0
+    leftSecondsForClaim: 0
+  savedMotorData:
+    motorPartDataList: []
+  requiredSessionForAd: 0
+  completedSessionForAd: 0
