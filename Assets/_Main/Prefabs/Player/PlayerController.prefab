@@ -77,15 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ddbdf0351b4cf3b37bd15dfdbe5e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Main.Scripts.WeaponSystem.WeaponHolder
-  currentWeaponData:
-    weaponPrefab: {fileID: 0}
-    weaponType: 0
-    shootPoint: {fileID: 0}
-    damage: 0
-    fireRate: 0
-    range: 0
-    clipSize: 0
-    maxAmmo: 0
   equipped: {fileID: 0}
   holderParentTransform: {fileID: 3155686157659918918}
 --- !u!1 &1169655928555413873

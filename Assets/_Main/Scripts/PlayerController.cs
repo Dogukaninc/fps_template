@@ -24,8 +24,6 @@ namespace _Main.Scripts.Player
         private CharacterController _characterController;
         private float _verticalVelocity;
 
-        [SerializeField] private AbstractPlayerWeaponBase equipped;
-
         [Header("Child References")]
         [SerializeField] private WeaponHolder weaponHolder;
 

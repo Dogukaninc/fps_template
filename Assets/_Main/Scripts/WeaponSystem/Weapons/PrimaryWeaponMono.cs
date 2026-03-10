@@ -9,7 +9,6 @@ namespace _Main.Scripts.WeaponSystem.Weapons
     
     public class PrimaryWeaponMono : AbstractPlayerWeaponBase
     {       
-        // Burada envanterdeki her silahın üzerinde olacak ana sınıf bu
         [SerializeField] private WeaponData currentWeaponData;
 
         private ShootingData _shootingData = new ShootingData();
@@ -21,8 +20,8 @@ namespace _Main.Scripts.WeaponSystem.Weapons
         public override void FireWeapon()
         {
             if (currentWeaponData == null || currentWeaponData.shootPoint == null) return;
-
-            float fireInterval = 1f / currentWeaponData.fireRate; // fireRate = rounds per second
+            
+            float fireInterval = 1f / currentWeaponData.fireRate;
             if (Time.time - _lastFireTime < fireInterval) return;
             _lastFireTime = Time.time;
 

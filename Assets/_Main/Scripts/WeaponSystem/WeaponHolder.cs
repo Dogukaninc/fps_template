@@ -13,7 +13,7 @@ namespace _Main.Scripts.WeaponSystem
     {
         private WeaponData currentWeaponData;
         [SerializeField] private AbstractPlayerWeaponBase equipped;
-        
+
         // Bu sınıfta tuşa bastığımızda istediğimiz silahı elimizde spawnlayacağız
         /// 1 -> Rifle 2 -> Pistol
         /// Seçilen prefabi elimde spawnlayacak ,
@@ -61,14 +61,16 @@ namespace _Main.Scripts.WeaponSystem
         {
             Debug.Log("Scope Açıldı");
         }
+
         private IEnumerator ScopeCoroutine()
         {
             while (true)
             {
                 // Weapon aim settings will be handled from weapon data or custom weapon scriptable object.
                 holderParentTransform.position = Vector3.Lerp(holderParentTransform.position, holderParentTransform.position + holderParentTransform.forward * 0.1f, Time.deltaTime * 5f);
-                
+
             }
+
             // Scope açma animasyonu veya efektleri burada işlenebilir
             yield return new WaitForSeconds(0.5f); // Örnek olarak 0.5 saniye bekleyelim
             Debug.Log("Scope Coroutine tamamlandı");
